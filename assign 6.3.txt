@@ -1,0 +1,34 @@
+Explain the working of below pig script commands with an example:
+1. LOAD - loads data from file system
+          ex: l1 = load '/home/acadgild/si' using PigStorage(',') as (date,tem);  
+
+2. STORE - stores or saves results to file system
+           ex: Store l1 into '/home/acadgild/ll1);
+
+3. DUMP - displays results to screen
+           ex: dump l1;
+
+4. FOREACH - Generates data transformations based on columns of data
+             ex: ff1 = foreach l1 GENERATE date;
+
+5. FILTER - Selects tuples from a relation based on some condition
+            ex:
+
+			f1 = FILTER l1 by tem> 23;
+  			dump f1;
+
+6. GROUP BY - Groups the data in one or multiple relations
+              
+
+		gb = GROUP l1 BY tem;
+		DUMP gb;
+		
+7. ORDER BY - Sorts a relation based on one or more fields
+            
+		ro = ORDER l1 BY tem DESC;
+		DUMP ro;
+		
+
+
+8. DESCRIBE - Returns the schema of an alias
+              ex: describe l1;
